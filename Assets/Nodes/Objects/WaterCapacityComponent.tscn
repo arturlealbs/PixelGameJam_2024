@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://c0yd51b4h6hk1"]
+
+[ext_resource type="Script" path="res://Assets/Code/Scripts/GdScript/Supplie.gd" id="1_w4oba"]
+
+[node name="WaterCapacityComponent" type="Node"]
+script = ExtResource("1_w4oba")

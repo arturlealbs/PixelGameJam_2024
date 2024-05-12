@@ -40,7 +40,6 @@ texture = ExtResource("2_2xxj0")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Up/StaticBody2D"]
 position = Vector2(-7.62939e-06, -2.66663)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_4wt6o")
 
 [node name="Down" type="Sprite2D" parent="Walls"]
@@ -63,7 +62,6 @@ texture = ExtResource("2_2xxj0")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Right/StaticBody2D"]
 position = Vector2(-0.901367, -0.0261307)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_btrs3")
 
 [node name="Player" parent="." instance=ExtResource("1_obe2f")]

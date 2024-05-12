@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://diqcma4elup7f"]
+
+[ext_resource type="Script" path="res://Assets/Code/Scripts/GdScript/Supplie.gd" id="1_g0t1e"]
+
+[node name="EnergyComponent" type="Node"]
+script = ExtResource("1_g0t1e")
