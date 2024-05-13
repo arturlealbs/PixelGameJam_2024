@@ -23,6 +23,7 @@ public partial class InteractableComponent : Node
     {
         if(Input.IsActionJustPressed("interact") && label.Visible)
         {
+			GD.Print("OnInteraction emitted from: " + GetParent().Name);
 			EmitSignal(SignalName.OnInteraction);
 		}
     }
