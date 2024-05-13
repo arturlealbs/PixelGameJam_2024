@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://bywil4dkrf6wj"]
+
+[ext_resource type="Script" path="res://Assets/Code/Scripts/CSharp/InteractableComponent.cs" id="1_jqvxh"]
+[ext_resource type="FontFile" uid="uid://dmsgtp67dgaq4" path="res://Assets/Sprites/pixelplay.ttf" id="2_nn4nw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s4dqm"]
+size = Vector2(48, 48)
+
+[sub_resource type="LabelSettings" id="LabelSettings_aijy0"]
+font = ExtResource("2_nn4nw")
+
+[node name="InteractableComponent" type="Node2D"]
+script = ExtResource("1_jqvxh")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_s4dqm")
+
+[node name="Label" type="Label" parent="."]
+visible = false
+offset_left = -40.0
+offset_top = -48.0
+offset_right = 40.0
+offset_bottom = -25.0
+text = "BUTTON NAME"
+label_settings = SubResource("LabelSettings_aijy0")
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
