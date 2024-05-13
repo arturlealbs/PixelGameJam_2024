@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://cc7l45h6wvvh8"]
+[gd_scene load_steps=8 format=3 uid="uid://cc7l45h6wvvh8"]
 
 [ext_resource type="PackedScene" uid="uid://dh7ngawor7i6" path="res://Assets/Nodes/Objects/Player.tscn" id="1_obe2f"]
 [ext_resource type="Texture2D" uid="uid://koj4vsqbmcuf" path="res://icon.svg" id="2_2xxj0"]
+[ext_resource type="PackedScene" uid="uid://bqechopajw3ki" path="res://Assets/Nodes/Objects/WaterTank.tscn" id="2_u428a"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_es65m"]
 size = Vector2(120, 128.463)
@@ -10,7 +11,7 @@ size = Vector2(120, 128.463)
 size = Vector2(130.409, 122.667)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hk4mb"]
-size = Vector2(131.335, 128)
+size = Vector2(128.074, 128)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_btrs3"]
 size = Vector2(126.197, 129.008)
@@ -42,27 +43,56 @@ texture = ExtResource("2_2xxj0")
 position = Vector2(-7.62939e-06, -2.66663)
 shape = SubResource("RectangleShape2D_4wt6o")
 
-[node name="Down" type="Sprite2D" parent="Walls"]
-position = Vector2(235.875, 258)
-scale = Vector2(3.37305, 0.1875)
+[node name="DownRight" type="Sprite2D" parent="Walls"]
+position = Vector2(346.51, 257.063)
+scale = Vector2(1.46109, 0.188476)
 texture = ExtResource("2_2xxj0")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="Walls/Down"]
+[node name="StaticBody2D" type="StaticBody2D" parent="Walls/DownRight"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Down/StaticBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/DownRight/StaticBody2D"]
 position = Vector2(-0.704117, 0)
 shape = SubResource("RectangleShape2D_hk4mb")
 
-[node name="Right" type="Sprite2D" parent="Walls"]
-position = Vector2(461.75, 135.055)
-scale = Vector2(0.277344, 2.0929)
+[node name="DownLeft" type="Sprite2D" parent="Walls"]
+position = Vector2(132, 257)
+scale = Vector2(1.5625, 0.1875)
 texture = ExtResource("2_2xxj0")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="Walls/Right"]
+[node name="StaticBody2D" type="StaticBody2D" parent="Walls/DownLeft"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Right/StaticBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/DownLeft/StaticBody2D"]
+position = Vector2(0.0370636, 0)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_hk4mb")
+
+[node name="RightUp" type="Sprite2D" parent="Walls"]
+position = Vector2(461.25, 60.0547)
+scale = Vector2(0.285156, 0.92102)
+texture = ExtResource("2_2xxj0")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Walls/RightUp"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/RightUp/StaticBody2D"]
 position = Vector2(-0.901367, -0.0261307)
 shape = SubResource("RectangleShape2D_btrs3")
+
+[node name="RightDown" type="Sprite2D" parent="Walls"]
+position = Vector2(462.066, 209)
+scale = Vector2(0.295846, 0.953125)
+texture = ExtResource("2_2xxj0")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Walls/RightDown"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/RightDown/StaticBody2D"]
+position = Vector2(-0.901367, -0.0261307)
+shape = SubResource("RectangleShape2D_btrs3")
+
+[node name="WaterTank1" parent="." instance=ExtResource("2_u428a")]
+position = Vector2(141, 125)
+
+[node name="WaterTank2" parent="." instance=ExtResource("2_u428a")]
+position = Vector2(358, 128)
 
 [node name="Player" parent="." instance=ExtResource("1_obe2f")]
 position = Vector2(252, 112)
