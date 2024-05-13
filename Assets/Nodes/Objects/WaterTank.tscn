@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://bqechopajw3ki"]
+
+[ext_resource type="PackedScene" uid="uid://c0yd51b4h6hk1" path="res://Assets/Nodes/Objects/WaterCapacityComponent.tscn" id="1_0vqvv"]
+[ext_resource type="Texture2D" uid="uid://koj4vsqbmcuf" path="res://icon.svg" id="2_xo7ii"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kosxp"]
+size = Vector2(16, 32)
+
+[node name="WaterTank" type="StaticBody2D"]
+
+[node name="WaterCapacityComponent" parent="." instance=ExtResource("1_0vqvv")]
+MAX_CAPACITY = 1000.0
+INITIAL_CAPACITY = 250.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -16)
+scale = Vector2(0.125, 0.25)
+texture = ExtResource("2_xo7ii")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -16)
+shape = SubResource("RectangleShape2D_kosxp")

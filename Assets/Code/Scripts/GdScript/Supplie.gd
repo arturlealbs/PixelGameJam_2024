@@ -27,16 +27,10 @@ func _ready():
 	
 # PUBLIC METHODS
 func increase(value: float) -> void:
-	if current_capacity + value > MAX_CAPACITY:
-		current_capacity = MAX_CAPACITY
-	else:
-		current_capacity += value
+	current_capacity = clamp(current_capacity + value, 0, MAX_CAPACITY)
 
 func  decrease(value: float) -> void:
-	if current_capacity - value < 0.0:
-		current_capacity = 0.0
-	else: 
-		current_capacity -= value
+	current_capacity = clamp(current_capacity - value, 0, MAX_CAPACITY)
 		
 # PRIVATE METHODS
 # SUBCLASSES
