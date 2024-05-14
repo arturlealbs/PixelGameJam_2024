@@ -16,7 +16,6 @@ public partial class InteractableComponent : Node
 		hitbox.BodyEntered += PlayerEntered;
 		hitbox.BodyExited += PlayerExited;
 		label = GetChild<Label>(1);
-		label.Text = InputMap.ActionGetEvents("interact")[0].AsText().Split(" ")[0];
 	}
 
     public override void _PhysicsProcess(double delta)
@@ -36,6 +35,10 @@ public partial class InteractableComponent : Node
 	private void PlayerExited(Node2D player)
 	{
 		label.Visible = false;
+
+	public string GetButtonNameFromAction(string action)
+	{
+		return InputMap.ActionGetEvents(action)[0].AsText().Split(" ")[0];
 	}
 
 }
