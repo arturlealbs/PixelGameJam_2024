@@ -1,7 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://dno1hbcjtslec"]
-
-[ext_resource type="Script" path="res://Assets/Code/Scripts/CSharp/CameraComponent.cs" id="1_awmpi"]
-
-[node name="CameraComponent" type="Camera2D" groups=["Camera"]]
-position_smoothing_enabled = true
-script = ExtResource("1_awmpi")
