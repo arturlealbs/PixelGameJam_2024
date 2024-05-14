@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://b8tfcrmb4tq22"]
+
+[ext_resource type="FontFile" uid="uid://dmsgtp67dgaq4" path="res://Assets/Sprites/pixelplay.ttf" id="1_6m08s"]
+
+[node name="Hud" type="CanvasLayer"]
+
+[node name="Label" type="Label" parent="."]
+offset_right = 140.0
+offset_bottom = 39.0
+theme_override_fonts/font = ExtResource("1_6m08s")
+theme_override_font_sizes/font_size = 8
+text = "Backpack: "
