@@ -5,10 +5,14 @@ public partial class InteractableComponent : Node
 {
 	
 	[Signal]
-	public delegate void OnInteractionEventHandler();
+	public delegate void OnInteractionEventHandler(Player player);
+
+	[Signal]
+	public delegate void PlayerInRangeEventHandler(Player player);
 
 	private Area2D hitbox;
 	private Label label;
+	private Player playerReference;
 
 	public override void _Ready()
 	{
@@ -23,18 +27,27 @@ public partial class InteractableComponent : Node
         if(Input.IsActionJustPressed("interact") && label.Visible)
         {
 			GD.Print("OnInteraction emitted from: " + GetParent().Name);
-			EmitSignal(SignalName.OnInteraction);
+			EmitSignal(SignalName.OnInteraction, playerReference);
 		}
     }
 
+	public void ChangeLabelText(string text)
+	{
+		label.Text = text;
+	}
+
     private void PlayerEntered(Node2D player)
 	{
+		playerReference = (Player) player;
+		EmitSignal(SignalName.PlayerInRange, player);
 		label.Visible = true;
 	}
 
 	private void PlayerExited(Node2D player)
 	{
 		label.Visible = false;
+		playerReference = null;
+	}
 
 	public string GetButtonNameFromAction(string action)
 	{
