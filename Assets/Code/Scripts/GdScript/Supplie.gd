@@ -31,6 +31,11 @@ func increase(value: float) -> void:
 
 func  decrease(value: float) -> void:
 	current_capacity = clamp(current_capacity - value, 0, MAX_CAPACITY)
-		
+
+func is_full() -> bool:
+	if current_capacity == MAX_CAPACITY:
+		return true
+	return false
+
 # PRIVATE METHODS
 # SUBCLASSES
