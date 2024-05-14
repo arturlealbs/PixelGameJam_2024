@@ -4,10 +4,10 @@
 [ext_resource type="FontFile" uid="uid://dmsgtp67dgaq4" path="res://Assets/Sprites/pixelplay.ttf" id="2_nn4nw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s4dqm"]
-size = Vector2(48, 48)
 
 [sub_resource type="LabelSettings" id="LabelSettings_aijy0"]
 font = ExtResource("2_nn4nw")
+font_size = 8
 
 [node name="InteractableComponent" type="Node2D"]
 script = ExtResource("1_jqvxh")
@@ -21,12 +21,11 @@ shape = SubResource("RectangleShape2D_s4dqm")
 
 [node name="Label" type="Label" parent="."]
 visible = false
-offset_left = -40.0
-offset_top = -48.0
-offset_right = 40.0
-offset_bottom = -25.0
-text = "BUTTON NAME"
+offset_left = -24.0
+offset_top = -114.0
+offset_right = 71.0
+offset_bottom = -24.0
 label_settings = SubResource("LabelSettings_aijy0")
-horizontal_alignment = 1
 vertical_alignment = 1
+autowrap_mode = 1
 uppercase = true
