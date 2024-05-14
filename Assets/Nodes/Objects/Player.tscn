@@ -522,10 +522,10 @@ position_smoothing_enabled = true
 position_smoothing_speed = 4.0
 drag_horizontal_enabled = true
 drag_vertical_enabled = true
-drag_left_margin = 0.5
-drag_top_margin = 0.5
-drag_right_margin = 0.5
-drag_bottom_margin = 0.5
+drag_left_margin = 0.3
+drag_top_margin = 0.3
+drag_right_margin = 0.3
+drag_bottom_margin = 0.3
 
 [node name="WaterCapacityComponent" parent="." instance=ExtResource("10_krm2u")]
 MAX_CAPACITY = 100.0

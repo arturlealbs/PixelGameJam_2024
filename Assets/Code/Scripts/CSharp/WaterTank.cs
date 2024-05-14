@@ -18,7 +18,7 @@ public partial class WaterTank : StaticBody2D
 
 	private void UpdateInfo(Player player)
 	{
-		string formattedString = String.Format("Capacity: {0}/{1}\nPress '{2}' to fill\nPress '{3}' to drain", waterCapacity.Get("current_capacity"), waterCapacity.Get("MAX_CAPACITY"), interactable.GetButtonNameFromAction("interact"), "X");
+		string formattedString = String.Format("Capacity: {0}/{1}\nPress '{2}' to fill\nPress '{3}' to drain", waterCapacity.Get("current_capacity"), waterCapacity.Get("MAX_CAPACITY"), interactable.GetButtonNameFromAction("interact1"), interactable.GetButtonNameFromAction("interact2"));
 		interactable.ChangeLabelText(formattedString);
 	}
 

@@ -24,7 +24,7 @@ public partial class InteractableComponent : Node
 
     public override void _PhysicsProcess(double delta)
     {
-        if(Input.IsActionJustPressed("interact") && label.Visible)
+        if(Input.IsActionJustPressed("interact1") && label.Visible)
         {
 			GD.Print("OnInteraction emitted from: " + GetParent().Name);
 			EmitSignal(SignalName.OnInteraction, playerReference);

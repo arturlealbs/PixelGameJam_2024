@@ -3,6 +3,10 @@ using System;
 
 public partial class WaterFiller : Node2D
 {
+
+
+
+
 	/* TODO
 
 		FAZER UMA STATE MACHINE PARA OS MAQUINÁRIOS
@@ -30,11 +34,11 @@ public partial class WaterFiller : Node2D
 		
 		if(player.HasBackpack() && !player.IsBackpackFull())
 		{
-			formattedString += String.Format("\nPress {0} to Fill your backpack",  interactable.GetButtonNameFromAction("interact"));
+			formattedString += String.Format("\nPress {0} to Fill your backpack",  interactable.GetButtonNameFromAction("interact1"));
 		}
 		else if(!player.HasBackpack() && isFilling)
 		{
-			formattedString += String.Format("\nPress {0} to get your backpack\nBackpack: {1}/{2}", interactable.GetButtonNameFromAction("interact"), player.GetBackpackCurrentCapacity(), player.GetBackpackMaxCapacity());
+			formattedString += String.Format("\nPress {0} to get your backpack\nBackpack: {1}/{2}", interactable.GetButtonNameFromAction("interact1"), player.GetBackpackCurrentCapacity(), player.GetBackpackMaxCapacity());
 		}
 
 		interactable.ChangeLabelText(formattedString);
