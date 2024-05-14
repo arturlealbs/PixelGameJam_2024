@@ -1,11 +1,11 @@
-[gd_scene load_steps=19 format=3 uid="uid://cc7l45h6wvvh8"]
+[gd_scene load_steps=16 format=3 uid="uid://cc7l45h6wvvh8"]
 
 [ext_resource type="PackedScene" uid="uid://dh7ngawor7i6" path="res://Assets/Nodes/Objects/Player.tscn" id="1_obe2f"]
 [ext_resource type="Texture2D" uid="uid://koj4vsqbmcuf" path="res://icon.svg" id="2_2xxj0"]
 [ext_resource type="PackedScene" uid="uid://bqechopajw3ki" path="res://Assets/Nodes/Objects/WaterTank.tscn" id="2_u428a"]
-[ext_resource type="PackedScene" uid="uid://dno1hbcjtslec" path="res://Assets/Nodes/Objects/CameraComponent.tscn" id="4_5a2bw"]
+[ext_resource type="PackedScene" uid="uid://7v2cc2fr0m04" path="res://Assets/Nodes/Objects/WaterFiller.tscn" id="5_exf88"]
 [ext_resource type="FontFile" uid="uid://dmsgtp67dgaq4" path="res://Assets/Sprites/pixelplay.ttf" id="5_yegvn"]
-[ext_resource type="Script" path="res://Assets/Code/Scripts/CSharp/CameraTransition.cs" id="6_knd3s"]
+[ext_resource type="PackedScene" uid="uid://b8tfcrmb4tq22" path="res://Assets/Nodes/UI/hud.tscn" id="6_drubs"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_g8wcu"]
 texture = ExtResource("2_2xxj0")
@@ -97,15 +97,6 @@ size = Vector2(224, 14)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mxm37"]
 size = Vector2(224, 14)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_4jgh0"]
-size = Vector2(32, 1)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_gfi2s"]
-size = Vector2(32, 0.5)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_6sx50"]
-size = Vector2(1, 48)
 
 [node name="TestLevel" type="Node2D"]
 
@@ -222,55 +213,13 @@ position = Vector2(368, 263)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TileMap/Walls/RightRoom/DownRightWall"]
 shape = SubResource("RectangleShape2D_mxm37")
 
-[node name="CameraTransitions" type="Node" parent="."]
-
-[node name="UpTransition" type="Area2D" parent="CameraTransitions"]
-position = Vector2(240, 0)
-collision_layer = 0
-collision_mask = 2
-script = ExtResource("6_knd3s")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CameraTransitions/UpTransition"]
-shape = SubResource("RectangleShape2D_4jgh0")
-
-[node name="DownTransition" type="Area2D" parent="CameraTransitions"]
-position = Vector2(240, 270)
-collision_layer = 0
-collision_mask = 2
-script = ExtResource("6_knd3s")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CameraTransitions/DownTransition"]
-shape = SubResource("RectangleShape2D_gfi2s")
-
-[node name="RightTransition" type="Area2D" parent="CameraTransitions"]
-position = Vector2(480, 136)
-collision_layer = 0
-collision_mask = 2
-script = ExtResource("6_knd3s")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CameraTransitions/RightTransition"]
-shape = SubResource("RectangleShape2D_6sx50")
-
-[node name="LeftTransition" type="Area2D" parent="CameraTransitions"]
-position = Vector2(0, 136)
-collision_layer = 0
-collision_mask = 2
-script = ExtResource("6_knd3s")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CameraTransitions/LeftTransition"]
-shape = SubResource("RectangleShape2D_6sx50")
-
-[node name="CameraComponent" parent="." instance=ExtResource("4_5a2bw")]
-anchor_mode = 0
-
 [node name="WaterTank1" parent="." instance=ExtResource("2_u428a")]
-position = Vector2(141, 125)
-
-[node name="WaterTank2" parent="." instance=ExtResource("2_u428a")]
-position = Vector2(358, 128)
+position = Vector2(365, 59)
 
 [node name="Player" parent="." instance=ExtResource("1_obe2f")]
 position = Vector2(252, 112)
+
+[node name="Hud" parent="Player" instance=ExtResource("6_drubs")]
 
 [node name="Hub" type="Label" parent="."]
 offset_left = 17.0
@@ -281,6 +230,7 @@ theme_override_fonts/font = ExtResource("5_yegvn")
 text = "HUB"
 
 [node name="RightRoom" type="Label" parent="Hub"]
+layout_mode = 0
 offset_left = 480.0
 offset_top = 1.0
 offset_right = 549.0
@@ -313,3 +263,8 @@ offset_right = 52.0
 offset_bottom = -249.0
 theme_override_fonts/font = ExtResource("5_yegvn")
 text = "UP ROOM"
+
+[node name="WaterFiller" parent="." instance=ExtResource("5_exf88")]
+position = Vector2(193, 40)
+
+[node name="Hud" parent="." instance=ExtResource("6_drubs")]
